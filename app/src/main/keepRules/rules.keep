@@ -1,0 +1,20 @@
+# Hilt
+-keep class dagger.hilt.** { * }
+-keepclassmembers class * {
+    @dagger.hilt.android.AndroidEntryPoint *;
+}
+
+# Retrofit & OkHttp
+-keepattributes Signature
+-keepattributes *Annotation*
+-keep class retrofit2.** { * }
+-keep class okhttp3.** { * }
+-keep class com.medipulse.app.data.remote.** { * }
+
+# Kotlinx Serialization
+-keepattributes *Annotation*, InnerClasses, Signature
+-keepclassmembers class * {
+    @kotlinx.serialization.Serializable <fields>;
+}
+-keep,allowobfuscation @kotlinx.serialization.Serializable class *
+-keep,allowobfuscation @interface kotlinx.serialization.Serializable
